@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
-import Hero from "./components/hero/Hero";
+import Home from "./components/home/Home";
 import About from "./components/about/About";
 import Technologies from "./components/technologies/Technologies";
 import Experience from "./components/experience/Experience";
@@ -14,10 +14,10 @@ const App = () => {
         <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>{" "}
       </div>{" "}
       <div className="container mx-auto px-8">
-       <Navbar/>
-       <Router>
+        <Router>
+          <Navbar />
           <Routes>
-            <Route path="/hero" element={<Hero />} />
+            <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/technology" element={<Technologies />} />
             <Route path="/experience" element={<Experience />} />
