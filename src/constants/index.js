@@ -81,7 +81,7 @@ export const PROJECTS = [
   },
 ];
 export const CONTACT = {
-  address: "Ikeja Lagos State, Nigeria. ",
-  phoneNo: "+234 81 0435 7439 ",
+  address: " Ikeja Lagos State, Nigeria. ",
+  phoneNo: " +234 81 0435 7439 , +234 80 7953 4994",
   email: "Oluwakemie05gmail.com",
 };

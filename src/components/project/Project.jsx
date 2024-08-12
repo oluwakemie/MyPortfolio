@@ -18,7 +18,7 @@ const Project = () => {
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -100 }}
-              transition={{ duration: 1}}
+              transition={{ duration: 1 }}
               className="w-full lg:w-1/2"
             >
               <img
@@ -28,9 +28,12 @@ const Project = () => {
                 rounded-5
               />
             </motion.div>
-            <motion.div  whileInView={{ opacity: 1, x: 0 }}
+            <motion.div
+              whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: 100 }}
-              transition={{ duration: 1}} className="w-full max-w-xl lg:w-1/2">
+              transition={{ duration: 1 }}
+              className="w-full max-w-xl lg:w-1/2"
+            >
               <h6 className="mb-2 font-semibold">{project.title}</h6>
               <p className="mb-4 text-neutral-400">
                 {project.description}

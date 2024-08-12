@@ -42,9 +42,15 @@ const Home = () => {
               animate="visible"
               className="my-2 max-w-xl py-3 font-light tracking-tighter"
             >
-              I am a passionate frontend developer and Software Tester with a
-              knack for crafting robust and scalable web applications. with 5
-              years of hands-on experience
+              A dedicated frontend developer and a skilled QA Tester with 2
+              years of hands-on experience in building responsive, user-friendly
+              and scalable web applications. Proficient in HTML, CSS,
+              JavaScript, and frameworks like React.js and Vue.js. and
+              Proficient in manual and automated testing techniques, Familiar
+              with tools like Selenium,JIRA and TestRail.
+               Passionate about
+              continuous learning and staying up-to-date with the latest web
+              development trends and technologies.
             </motion.p>
           </div>
           <div className="m-8 flex items-center justify-start gap-8 text-2xl">
@@ -56,9 +62,9 @@ const Home = () => {
         <div className="w-full lg:w-1/2 lg:p-8">
           <div className="flex justify-center">
             <motion.img
-              initial={{x: 100, opacity:0}}
-              animate={{x: 0, opacity:1}}
-              transition={{duration: 1, delay: 1.2}}
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 1.2 }}
               src={Profile}
               alt="Kemmie"
             />
