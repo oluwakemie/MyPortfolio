@@ -26,9 +26,15 @@ const About = () => {
         >
           <div className="flex justify-center lg:justify-start">
             <p className="my-2 max-w-xl py-6">
-              I am a dedicated and versatile frontend developer with a
-              passionatee for creating friendly web applications. With 5 years
-              of professional exprience{" "}
+              I am a graduate of Computer Science and I have a strong background
+              of Information Technology. I'm a frontend developer and software
+              tester with a passion for creating intuitive and visually
+              appealing user interfaces. My expertise lies in crafting
+              responsive, efficient, and user-friendly web applications. As a
+              software tester, I ensure that every application I work on meets
+              high standards of quality and performance through meticulous
+              testing and attention to detail. I’m dedicated to delivering
+              seamless and robust solution that enhance user experiences{" "}
             </p>
           </div>
         </motion.div>
