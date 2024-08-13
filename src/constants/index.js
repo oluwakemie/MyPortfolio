@@ -46,21 +46,21 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "Travel Agency Website",
+    title: "Trabook",
     image: Project1,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corrupti asperiores nostrum fuga maxime temporibus nulla obcaecati numquam dicta quibusdam. A doloribus quidem molestias facere cupiditate repellendus neque aperiam tenetur.",
     technologies: ["JavaScript", "Tailwind CSS", "React.Js"],
   },
   {
-    title: "Banking Website",
+    title: "Hoobank",
     image: Project2,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corrupti asperiores nostrum fuga maxime temporibus nulla obcaecati numquam dicta quibusdam. A doloribus quidem molestias facere cupiditate repellendus neque aperiam tenetur.",
     technologies: ["JavaScript", "Tailwind CSS", "React.Js"],
   },
   {
-    title: "A bill payment app",
+    title: "Bilvending",
     image: Project3,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corrupti asperiores nostrum fuga maxime temporibus nulla obcaecati numquam dicta quibusdam. A doloribus quidem molestias facere cupiditate repellendus neque aperiam tenetur.",
