@@ -49,28 +49,28 @@ export const PROJECTS = [
     title: "Trabook",
     image: Project1,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corrupti asperiores nostrum fuga maxime temporibus nulla obcaecati numquam dicta quibusdam. A doloribus quidem molestias facere cupiditate repellendus neque aperiam tenetur.",
+      "Trabook is a travel agency web app offering expert guidance for your travel destinations. Our team of seasoned tourism professionals provides top tips and tailored advice.Discover the best recommendations for every place you wish to explore. Let Trabook make your travel planning seamless and stress-free",
     technologies: ["JavaScript", "Tailwind CSS", "React.Js"],
   },
   {
     title: "Hoobank",
     image: Project2,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corrupti asperiores nostrum fuga maxime temporibus nulla obcaecati numquam dicta quibusdam. A doloribus quidem molestias facere cupiditate repellendus neque aperiam tenetur.",
+      "Hoobank is an online banking platform for payments that helps users find the best credit cards.It employs a smart methodology to identify cards that match your needs.With Hoobank, choosing the right credit card is simple and tailored to you.Experience personalized banking with Hoobank's innovative approach.",
     technologies: ["JavaScript", "Tailwind CSS", "React.Js"],
   },
   {
     title: "Bilvending",
     image: Project3,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corrupti asperiores nostrum fuga maxime temporibus nulla obcaecati numquam dicta quibusdam. A doloribus quidem molestias facere cupiditate repellendus neque aperiam tenetur.",
+      "It is designed to make bill payments in a breeze, so you can spend less time worrying about bills and more time enjoying life. In addition, with our secure and reliable payment system, you can rest assured that your transactions are always safe and secure",
     technologies: ["JavaScript", "Tailwind CSS", "React.Js"],
   },
   {
     title: "Uber Clone App",
     image: Project4,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corrupti asperiores nostrum fuga maxime temporibus nulla obcaecati numquam dicta quibusdam. A doloribus quidem molestias facere cupiditate repellendus neque aperiam tenetur.",
+      "I developed an Uber clone app using React.js and Firebase.The app replicates core Uber features, providing a seamless user experience.React.js powers the front-end, ensuring a dynamic interface.Firebase handles the backend, offering real-time data synchronization and authentication",
     technologies: [
       "JavaScript",
       "Tailwind CSS",
