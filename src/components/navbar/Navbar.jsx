@@ -49,7 +49,7 @@ const Navbar = () => {
       <div
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } absolute lg:hidden top-10 right-0 max-w-[300px] w-full bg-black flex flex-col items-center  gap-6 font-semibold transform transition-transform`}
+        } absolute lg:hidden top-10 right-0 max-w-[300px] w-full bg-black bg-opacity-100 flex flex-col items-center  gap-6 font-semibold transform transition-transform`}
       >
         <li className="list-none w-full text-center p-4 hover:bg-neutral-900 hover:text-white transition-all cursor-pointer">
           <Link to="/">Home</Link> 
