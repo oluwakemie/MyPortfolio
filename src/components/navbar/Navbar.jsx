@@ -14,7 +14,7 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <nav className=" flex items-center justify-between">
+    <nav className=" flex items-center justify-between mt-3">
       <div className="flex flex-shrink-0 items-center">
         <img src={logo} alt="" className="w-20 mx-2" />
       </div>
@@ -40,9 +40,9 @@ const Navbar = () => {
       </div>
       <div onClick={toggleMenu}>
         {isMenuOpen ? (
-          <FaTimes className="mt-2 lg:hidden block text-4xl cursor-pointer" />
+          <FaTimes className="mt-2 lg:hidden block text-2xl cursor-pointer" />
         ) : (
-          <TiThMenu className="mt-2 lg:hidden block text-4xl cursor-pointer" />
+          <TiThMenu className="mt-2 lg:hidden block text-2xl cursor-pointer" />
         )}{" "}
       </div>
 
