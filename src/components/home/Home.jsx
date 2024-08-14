@@ -4,6 +4,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { delay, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
@@ -47,15 +48,19 @@ const Home = () => {
               and scalable web applications. Proficient in HTML, CSS,
               JavaScript, and frameworks like React.js and Vue.js. and
               Proficient in manual and automated testing techniques, Familiar
-              with tools like Selenium,JIRA and TestRail.
-               Passionate about
+              with tools like Selenium,JIRA and TestRail. Passionate about
               continuous learning and staying up-to-date with the latest web
               development trends and technologies.
             </motion.p>
           </div>
           <div className="m-8 flex items-center justify-start gap-8 text-2xl">
-            <FaLinkedin />
+            <Link to="https://www.linkedin.com/in/oluwakemiesther/">
+              <FaLinkedin />
+            </Link>
+            <Link to="https://github.com/oluwakemie">
             <FaGithub />
+            </Link>
+           
             <FaInstagram />
           </div>
         </div>
