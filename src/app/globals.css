@@ -11,3 +11,83 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Hero orbit rings.
+   Driven by CSS rather than JS so the six perpetual rotations stay on the
+   compositor with no per-frame main-thread cost. Each ring gets its own
+   duration/direction via inline style in HeroRings.tsx. */
+.hero-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation-name: hero-ring-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.hero-ring--reverse {
+  animation-name: hero-ring-spin-reverse;
+}
+
+@keyframes hero-ring-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hero-ring-spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-ring {
+    animation: none;
+  }
+}
+
+/* Decorative QA motifs drifting behind the Skills and Experience sections.
+   `alternate` gives a soft bob with no snap back to the start position. Each
+   motif sets its own duration/delay inline so they never move in lockstep. */
+.qa-motif {
+  animation-name: qa-motif-float;
+  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  will-change: transform;
+}
+
+.qa-motif--deep {
+  animation-name: qa-motif-float-deep;
+}
+
+@keyframes qa-motif-float {
+  from {
+    transform: translateY(0) rotate(-5deg);
+  }
+  to {
+    transform: translateY(-14px) rotate(5deg);
+  }
+}
+
+@keyframes qa-motif-float-deep {
+  from {
+    transform: translateY(6px) rotate(4deg);
+  }
+  to {
+    transform: translateY(-20px) rotate(-4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qa-motif {
+    animation: none;
+  }
+}

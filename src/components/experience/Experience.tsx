@@ -2,77 +2,93 @@
 import React from "react";
 import { EXPERIENCES } from "../../constants";
 import { motion } from "framer-motion";
+import QaMotifs from "../shared/QaMotifs";
 
 const Experience = () => {
-  return (
-    <section id="experience" className="scroll-mt-24 border-b border-white/5 py-24">
-      <motion.span
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -20 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="font-sans text-sm uppercase tracking-[0.3em] text-gold"
-      >
-        04 — Experience
-      </motion.span>
-      <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -20 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="mt-4 text-5xl font-medium text-ivory sm:text-6xl"
-      >
-        Where I&rsquo;ve worked
-      </motion.h2>
+	return (
+		<section
+			id="experience"
+			className="relative scroll-mt-16 overflow-hidden py-24"
+		>
+			<QaMotifs variant="experience" />
+			<motion.h2
+				whileInView={{ opacity: 1, y: 0 }}
+				initial={{ opacity: 0, y: -20 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.5 }}
+				className="relative text-5xl font-medium text-forest sm:text-6xl"
+			>
+				Where I&rsquo;ve worked
+			</motion.h2>
 
-      <div className="mt-14 space-y-16">
-        {EXPERIENCES.map((experience) => (
-          <div
-            key={experience.company}
-            className="flex flex-wrap gap-x-16 gap-y-6"
-          >
-            <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: -30 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="w-full lg:w-1/4"
-            >
-              <p className="font-sans text-sm uppercase tracking-wider text-neutral-400">
-                {experience.year}
-              </p>
-              <p className="mt-1 font-sans text-sm uppercase tracking-wider text-neutral-500">
-                {experience.location}
-              </p>
-            </motion.div>
-            <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: 30 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="w-full max-w-3xl lg:flex-1"
-            >
-              <h3 className="text-2xl text-ivory sm:text-3xl">
-                {experience.role}
-                <span className="text-gold"> — {experience.company}</span>
-              </h3>
-              <ul className="mt-5 space-y-3">
-                {experience.bullets.map((bullet) => (
-                  <li
-                    key={bullet}
-                    className="flex gap-3 text-lg font-light leading-relaxed text-neutral-300 sm:text-xl"
-                  >
-                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gold/70" />
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+			<div className="relative mt-14 divide-y divide-forest/15 border-t border-forest/15">
+				{EXPERIENCES.map((experience, index) => (
+					<motion.div
+						key={experience.company}
+						whileInView={{ opacity: 1, y: 0 }}
+						initial={{ opacity: 0, y: 30 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6 }}
+						className="grid grid-cols-1 gap-y-10 py-14 lg:grid-cols-[320px_1fr] lg:gap-x-0"
+					>
+						<div className="lg:border-r lg:border-forest/15 lg:pr-10">
+							<span className="font-sans text-sm text-forest-muted/60">
+								{String(index + 1).padStart(2, "0")}
+							</span>
+							<h3 className="mt-4 text-3xl leading-tight text-forest sm:text-4xl">
+								{experience.role}
+							</h3>
+
+							<dl className="mt-10 space-y-6">
+								<div>
+									<dt className="font-sans text-xs uppercase tracking-[0.2em] text-forest-muted/70">
+										Company
+									</dt>
+									<dd className="mt-1.5 text-lg text-coral">
+										{experience.company}
+									</dd>
+								</div>
+								<div>
+									<dt className="font-sans text-xs uppercase tracking-[0.2em] text-forest-muted/70">
+										Location
+									</dt>
+									<dd className="mt-1.5 text-lg text-forest">
+										{experience.location}
+									</dd>
+								</div>
+								<div>
+									<dt className="font-sans text-xs uppercase tracking-[0.2em] text-forest-muted/70">
+										Period
+									</dt>
+									<dd className="mt-1.5 text-lg text-forest">
+										{experience.year}
+									</dd>
+								</div>
+							</dl>
+						</div>
+
+						<div className="lg:pl-10">
+							<p className="font-sans text-xs uppercase tracking-[0.2em] text-forest-muted/70">
+								What I did
+							</p>
+							<ol className="mt-5 max-w-2xl space-y-4">
+								{experience.bullets.map((bullet, i) => (
+									<li key={bullet} className="flex gap-4">
+										<span className="mt-0.5 flex-shrink-0 font-sans text-sm text-coral">
+											{String(i + 1).padStart(2, "0")}
+										</span>
+										<span className="text-lg font-light leading-relaxed text-forest-light sm:text-xl">
+											{bullet}
+										</span>
+									</li>
+								))}
+							</ol>
+						</div>
+					</motion.div>
+				))}
+			</div>
+		</section>
+	);
 };
 
 export default Experience;

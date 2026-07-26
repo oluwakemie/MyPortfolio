@@ -1,5 +1,5 @@
 import Hero from "@/components/home/Home";
-import About from "@/components/about/About";
+// import About from "@/components/about/About";
 import Technologies from "@/components/technologies/Technologies";
 import Certifications from "@/components/certifications/Certifications";
 import Experience from "@/components/experience/Experience";
@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <>
       <Hero />
-      <About />
+      {/* <About /> */}
       <Technologies />
       <Certifications />
       <Experience />

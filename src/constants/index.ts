@@ -8,22 +8,22 @@ export interface Experience {
 
 export const EXPERIENCES: Experience[] = [
   {
-    year: "Dec 2024 — Present",
+    year: "Dec 2024 - Present",
     role: "Quality Assurance Engineer",
     company: "Sproxil",
     location: "Ikeja, Lagos",
     bullets: [
       "Owned end-to-end QA for multiple survey and product verification platforms across functional, regression, and integration testing.",
-      "Led test execution for the PULSE Survey Builder — designed 200+ test cases covering conditional logic, pagination, checkbox grids, and question type variations, catching critical flow defects before launch.",
+      "Led test execution for the PULSE Survey Builder, designing 200+ test cases covering conditional logic, pagination, checkbox grids, and question type variations, catching critical flow defects before launch.",
       "Built and maintained a Postman collection of 50+ API tests validating authentication, data integrity, and error handling across REST endpoints.",
-      "Initiated a Playwright automation framework for regression coverage — authored scripts using the Page Object Model (POM) pattern for repeatable, maintainable test execution.",
+      "Initiated a Playwright automation framework for regression coverage, authoring scripts using the Page Object Model (POM) pattern for repeatable, maintainable test execution.",
       "Performed backend data validation via developer tools, application logs, and API endpoints to verify response accuracy with zero data corruption.",
       "Produced all QA deliverables per release: test plans, test case documents, defect reports, regression reports, and final QA sign-off.",
       "Coordinated 3 manual testers, improving team test coverage and accelerating release confidence across parallel workstreams.",
     ],
   },
   {
-    year: "Mar 2022 — Sep 2024",
+    year: "Mar 2022 - Sep 2024",
     role: "Software Tester",
     company: "Eaglecrest Technologies",
     location: "Ikeja, Lagos",
@@ -54,7 +54,7 @@ export const PROJECTS: Project[] = [
     bullets: [
       "Delivered a full QA test suite for a multi-modal logistics SaaS platform covering Authentication, Shipment Creation, Payment, Tracking, Address System, and RoutelyOne (7 sub-modules).",
       "Authored 100+ test cases including edge cases, negative paths, and OWASP Mobile Top 10 security test scenarios for web and mobile.",
-      "Built Playwright automation scripts for end-to-end shipment creation flows across intracity, interstate, and international routes — executed in CI on every deployment.",
+      "Built Playwright automation scripts for end-to-end shipment creation flows across intracity, interstate, and international routes, executed in CI on every deployment.",
       "Executed API endpoint testing across 10 critical endpoints via Postman, achieving p95 response times under 500ms and a 0% error rate under 100 concurrent users.",
       "Produced 6 QA deliverables: functional test cases, bug/defect report, performance report (HTML), usability feedback, regression report, and final QA sign-off.",
     ],
@@ -65,19 +65,19 @@ export const PROJECTS: Project[] = [
     company: "Sproxil",
     year: "2025",
     bullets: [
-      "Led QA ownership for a large-scale configurable survey platform — tested 7 question types, conditional logic flows, and paginated navigation.",
+      "Led QA ownership for a large-scale configurable survey platform, testing 7 question types, conditional logic flows, and paginated navigation.",
       "Wrote Playwright scripts to automate conditional logic validation and pagination flows, enabling rapid regression on each sprint release.",
-      "Identified and documented critical issues including conditional logic failures, database data-orphaning, and mobile viewport defects — all resolved before production.",
+      "Identified and documented critical issues including conditional logic failures, database data-orphaning, and mobile viewport defects, all resolved before production.",
       "Delivered a complete QA suite: 100+ test cases, 5 defect reports, a 93.5% API compliance performance report, usability summary, regression report, and sign-off doc.",
     ],
     technologies: ["Playwright", "Postman", "Regression Testing", "Agile"],
   },
   {
-    title: "HRM — Human Resources Portal",
+    title: "HRM - Human Resources Portal",
     company: "LASUCOM",
     year: "2024",
     bullets: [
-      "Tested an HR platform managing staff leave, appointments, queries, and exit clearance — covering functional, API, and regression testing.",
+      "Tested an HR platform managing staff leave, appointments, queries, and exit clearance, covering functional, API, and regression testing.",
       "Used Playwright to automate key leave application and approval flows, improving regression cycle speed and consistency.",
     ],
     technologies: ["Playwright", "API Testing", "Regression Testing"],
@@ -107,12 +107,12 @@ export const EDUCATION: EducationItem[] = [
   {
     degree: "B.Sc. in Computer Science",
     school: "Ajayi Crowther University, Oyo",
-    year: "May 2024 — Present",
+    year: "May 2024 - Present",
   },
   {
     degree: "HND in Computer Science",
     school: "Federal Polytechnic Ilaro, Ogun State",
-    year: "Sep 2019 — Nov 2021",
+    year: "Sep 2019 - Nov 2021",
   },
 ];
 

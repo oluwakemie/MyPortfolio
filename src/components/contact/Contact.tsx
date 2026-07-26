@@ -1,190 +1,176 @@
 "use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import {
+	HiOutlineEnvelope,
+	HiOutlinePhone,
+	HiOutlineMapPin,
+	HiOutlineArrowDownTray,
+} from "react-icons/hi2";
 import { CONTACT, SOCIALS } from "../../constants";
 
+const CHANNELS = [
+	{
+		label: "Email",
+		value: CONTACT.email,
+		href: `mailto:${CONTACT.email}`,
+		icon: HiOutlineEnvelope,
+	},
+	{
+		label: "Phone",
+		value: CONTACT.phoneNo,
+		href: `tel:${CONTACT.phoneNo.replace(/\s/g, "")}`,
+		icon: HiOutlinePhone,
+	},
+	{
+		label: "LinkedIn",
+		value: "oluwakemiesther",
+		href: SOCIALS.linkedin,
+		icon: FaLinkedin,
+	},
+	{
+		label: "GitHub",
+		value: "oluwakemie",
+		href: SOCIALS.github,
+		icon: FaGithub,
+	},
+	{
+		label: "Location",
+		value: CONTACT.location,
+		href: undefined,
+		icon: HiOutlineMapPin,
+	},
+];
+
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+	const reduce = useReducedMotion();
 
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState("");
-  const [error, setError] = useState("");
+	return (
+		<section id="contact" className="scroll-mt-16 py-24">
+			<div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-12">
+				<motion.div
+					whileInView={{ opacity: 1, x: 0 }}
+					initial={{ opacity: 0, x: -30 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6 }}
+				>
+					<span className="font-sans text-sm uppercase tracking-[0.3em] text-coral">
+						Contact
+					</span>
+					<h2 className="mt-4 text-5xl font-medium leading-tight text-forest sm:text-6xl">
+						Let&rsquo;s work{" "}
+						<span className="text-coral">together.</span>
+					</h2>
+					<p className="mt-6 max-w-md text-xl font-light leading-relaxed text-forest-light sm:text-2xl">
+						Open to QA Engineer roles, remote, hybrid, or on-site,
+						anywhere in the world.
+					</p>
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+					<div className="mt-9 flex flex-wrap items-center gap-5">
+						<a
+							href={`mailto:${CONTACT.email}`}
+							className="flex items-center gap-2 rounded-full bg-coral px-6 py-3 text-base font-medium text-cream transition-colors hover:bg-coral-dark"
+						>
+							<HiOutlineEnvelope className="text-lg" />
+							Email me
+						</a>
+						<a
+							href="/Oluwakemi-Dada-QA-Resume.pdf"
+							download
+							className="flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3 text-base text-forest transition-colors hover:border-forest hover:bg-forest hover:text-cream"
+						>
+							<HiOutlineArrowDownTray className="text-lg" />
+							Download CV
+						</a>
+					</div>
+				</motion.div>
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+				<motion.div
+					whileInView={{ opacity: 1, x: 0 }}
+					initial={{ opacity: 0, x: 30 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6, delay: 0.1 }}
+					className="overflow-hidden rounded-2xl border border-forest/10 bg-forest shadow-xl"
+				>
+					<div className="flex items-center gap-4 border-b border-cream/10 px-5 py-3.5">
+						<div className="flex gap-2">
+							<span className="h-3 w-3 rounded-full bg-coral" />
+							<span className="h-3 w-3 rounded-full bg-sage-dark" />
+							<span className="h-3 w-3 rounded-full bg-cream/30" />
+						</div>
+						<p className="font-mono text-xs text-cream/50">
+							oluwakemi@portfolio: ~/contact
+						</p>
+					</div>
 
-    setLoading(true);
-    setSuccess("");
-    setError("");
+					<div className="px-6 py-6 font-mono text-sm">
+						<p className="text-cream/70">
+							<span className="text-coral">$</span> connect --with
+							oluwakemi
+						</p>
+						<p className="mt-1 flex items-center gap-1 text-cream/40">
+							# resolving channels
+							<motion.span
+								className="ml-1 inline-block h-3.5 w-2 bg-cream/50"
+								animate={
+									reduce
+										? undefined
+										: { opacity: [1, 1, 0, 0] }
+								}
+								transition={{
+									duration: 1,
+									repeat: Infinity,
+									ease: "linear",
+								}}
+							/>
+						</p>
 
-    try {
-      const response = await fetch(
-        "https://portfolio-backend-gules-six.vercel.app/api/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Failed to send message");
-      }
-
-      setSuccess("Message sent successfully!");
-
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to send message");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <section id="contact" className="scroll-mt-24 py-24">
-      <motion.span
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -20 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="font-sans text-sm uppercase tracking-[0.3em] text-gold"
-      >
-        06 — Contact
-      </motion.span>
-      <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -20 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="mt-4 max-w-2xl text-5xl font-medium leading-tight text-ivory sm:text-6xl"
-      >
-        Let&rsquo;s work together.
-      </motion.h2>
-
-      <div className="mt-14 flex flex-wrap gap-x-16 gap-y-12">
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -30 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="w-full lg:w-2/5"
-        >
-          <p className="max-w-md text-xl font-light leading-relaxed text-neutral-300 sm:text-2xl">
-            Open to QA Engineer roles — remote, hybrid, or on-site — anywhere
-            in the world. Reach out directly or send a message.
-          </p>
-
-          <div className="mt-10 space-y-5">
-            <a
-              href={`mailto:${CONTACT.email}`}
-              className="block text-xl text-ivory transition-colors hover:text-gold sm:text-2xl"
-            >
-              {CONTACT.email}
-            </a>
-            <a
-              href={`tel:${CONTACT.phoneNo.replace(/\s/g, "")}`}
-              className="block text-xl text-ivory transition-colors hover:text-gold sm:text-2xl"
-            >
-              {CONTACT.phoneNo}
-            </a>
-            <p className="text-xl text-neutral-400 sm:text-2xl">
-              {CONTACT.location}
-            </p>
-          </div>
-
-          <div className="mt-10 flex gap-6 text-lg">
-            <a
-              href={SOCIALS.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-300 underline decoration-white/20 underline-offset-4 transition-colors hover:text-gold"
-            >
-              LinkedIn
-            </a>
-            <a
-              href={SOCIALS.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-300 underline decoration-white/20 underline-offset-4 transition-colors hover:text-gold"
-            >
-              GitHub
-            </a>
-          </div>
-        </motion.div>
-
-        <motion.form
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 30 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          onSubmit={handleSubmit}
-          className="flex w-full flex-col gap-5 lg:flex-1"
-        >
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="w-full border-b border-white/20 bg-transparent py-3 text-lg text-ivory outline-none transition-colors placeholder:text-neutral-500 focus:border-gold"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email address"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full border-b border-white/20 bg-transparent py-3 text-lg text-ivory outline-none transition-colors placeholder:text-neutral-500 focus:border-gold"
-          />
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            placeholder="Your message"
-            rows={4}
-            className="w-full resize-none border-b border-white/20 bg-transparent py-3 text-lg text-ivory outline-none transition-colors placeholder:text-neutral-500 focus:border-gold"
-          />
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="mt-4 w-fit rounded-full bg-gold px-8 py-3 text-base font-medium text-neutral-950 transition-colors hover:bg-gold-light disabled:opacity-60"
-          >
-            {loading ? "Sending..." : "Send message"}
-          </button>
-
-          {success && <p className="text-green-500">{success}</p>}
-          {error && <p className="text-red-500">{error}</p>}
-        </motion.form>
-      </div>
-    </section>
-  );
+						<ul className="mt-6 divide-y divide-cream/10 border-t border-cream/10">
+							{CHANNELS.map((channel) => {
+								const Row: keyof JSX.IntrinsicElements =
+									channel.href ? "a" : "div";
+								return (
+									<li key={channel.label}>
+										<Row
+											{...(channel.href
+												? {
+														href: channel.href,
+														target: channel.href.startsWith(
+															"http",
+														)
+															? "_blank"
+															: undefined,
+														rel: channel.href.startsWith(
+															"http",
+														)
+															? "noopener noreferrer"
+															: undefined,
+													}
+												: {})}
+											className={`flex items-center justify-between gap-4 py-4 text-cream transition-colors ${
+												channel.href
+													? "hover:text-coral"
+													: ""
+											}`}
+										>
+											<span className="flex items-center gap-3 text-cream/70">
+												<channel.icon className="text-base" />
+												{channel.label}
+											</span>
+											<span className="truncate text-cream">
+												{channel.value}
+											</span>
+										</Row>
+									</li>
+								);
+							})}
+						</ul>
+					</div>
+				</motion.div>
+			</div>
+		</section>
+	);
 };
 
 export default Contact;
