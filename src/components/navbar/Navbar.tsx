@@ -45,7 +45,7 @@ const Navbar = () => {
     <div className="sticky top-4 z-50 -mx-8 px-4 sm:px-8">
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between rounded-full border border-forest/10 bg-cream/95 pl-6 pr-2 shadow-lg shadow-forest/5 backdrop-blur-md">
         <a href="#top" className="flex-shrink-0 text-xl font-medium text-forest">
-          Oluwakemi<span className="text-coral">.</span>
+          <b>LADYBUG</b><span className="text-coral !text-lg">{"."}</span>
         </a>
 
         <div className="hidden items-center gap-7 text-base tracking-wide lg:flex">

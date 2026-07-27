@@ -72,7 +72,7 @@ export default function RootLayout({
 							<p>
 								&copy; {new Date().getFullYear()} Oluwakemi Dada
 							</p>
-							<p>Built with inspiration from Ladybug</p>
+							<p>Built with inspiration from Ladybug 🐞</p>
 						</footer>
 					</div>
 				</div>
